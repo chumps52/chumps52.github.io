@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heart Survey DEMO - KCCQ-12 Table</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/HSdemo/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/HSdemo/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/HSdemo/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/HSdemo/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/HSdemo/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/HSdemo/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/HSdemo/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/HSdemo/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HSdemo/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/HSdemo/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HSdemo/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/HSdemo/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HSdemo/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/HSdemo/img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/HSdemo/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="/HSdemo/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="/HSdemo/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <link href="/HSdemo/css/styles.css" rel="stylesheet">
+  <!-- TABULATOR -->
+  <link href="/HSdemo/css/vendor/tabulator/tabulator_bootstrap4.min.css" rel="stylesheet">
+  <script type="text/javascript" src="/HSdemo/js/vendor/tabulator/tabulator.min.js"></script>
+  <!-- TABULATOR DOWNLOAD BUTTONS -->
+  <script type="text/javascript" src="https://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+  <!-- CHARTJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  <!-- OWN SCRIPTS -->
+  <script src="/HSdemo/js/surveyResponses/surveyDropdown.js"></script>
+  <script src="/HSdemo/js/surveyResponses/kccqSurveyTable.js"></script>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/HSdemo/home">Heart Survey DEMO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/consentForms">Consent Forms</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Survey Responses</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item active" href="/HSdemo/kccqSurveyTable">KCCQ-12 - Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyCharts">KCCQ-12 - Charts</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyTable">Katz - Table</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyCharts">Katz - Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KCCQ-12 Scores</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="/HSdemo/kccqScoresTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqScoresCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="/HSdemo/healthTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/healthCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/backups">Backups</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div class="jumbotron" id="jumbotronCentered">
+      <h1>KCCQ-12 Responses: Table</h1>
+      <br>
+      <br>
+      <p>Select a PatientID from the dropdown and press "Generate Table" to view the select patient's KCCQ-12 responses as a table.</p>
+      <ul id="surveyBullets">
+        <li>Dates are in the format "<span style="color: red;"><b>MM-dd-yyyy-HH:mm:ss</b></span>".</li>
+        <li>Columns are resizeable.</li>
+        <li>Download buttons will appear after table generation.</li>
+        <li><b>NB: </b>Downloading as a PDF may cause the table to be truncated.</li>
+      </ul>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <select class="form-control" id="surveyResponses-dropdown"></select>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-primary mb-2" id="generate-table">Generate Table</button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+
+      <br>
+
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Question key
+        </button>
+      </p>
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <p id="question"><b>Q1: </b>Please indicate how much you have been limited by heart failure (shortness of breath or fatigue) over the past two weeks whilst:</p>
+              <p id="subQuestion"><b>a) </b>Showering/bathing</p>
+              <p id="subQuestion"><b>b) </b>Walking 1 block (approx. 80 metres) on level ground</p>
+              <p id="subQuestion"><b>c) </b>Hurrying or jogging (as if to catch a bus)</p>
+              <p id="question"><b>Q2: </b>Over the past 2 weeks, how many times did you have swelling in your feet, ankles or legs when you woke up in the morning?</p>
+              <p id="question"><b>Q3: </b>Over the past 2 weeks, on average, how many times has fatigue limited your ability to do what you wanted?</p>
+              <p id="question"><b>Q4: </b>Over the past 2 weeks, on average, how many times has shortness of breath limited your ability to do what you wanted?</p>
+              <p id="question"><b>Q5: </b>Over the past 2 weeks, on average, how many times have you been forced to sleep sitting up in a chair or with at least 3 pillows to prop you up because of shortness of breath?</p>
+              <p id="question"><b>Q6: </b>Over the past 2 weeks, how much has your heart failure limited your enjoyment of life?</p>
+              <p id="question"><b>Q7: </b>If you had to spend the rest of your life with your heart failure the way it is right now, how would you feel about this?</p>
+              <p id="question"><b>Q8: </b>Please indicate how your heart failure may have limited your participation in the following activities over the past 2 weeks:</p>
+              <p id="subQuestion"><b>a) </b>Hobbies, recreational activities</p>
+              <p id="subQuestion"><b>b) </b>Working or doing household chores</p>
+              <p id="subQuestion"><b>c) </b>Visiting family or friends out of your home</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+
+    </div>
+
+    <div id="tableDiv">
+      <div id="example-table" class="table-bordered table-striped thead-dark"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-csv" style="display: none;">Download CSV</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-json" style="display: none;">Download JSON</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-xlsx" style="display: none;">Download XLSX</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-pdf" style="display: none;">Download PDF</button>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

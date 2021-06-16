@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heart Survey DEMO - Health Table</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/HSdemo/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/HSdemo/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/HSdemo/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/HSdemo/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/HSdemo/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/HSdemo/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/HSdemo/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/HSdemo/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HSdemo/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/HSdemo/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HSdemo/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/HSdemo/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HSdemo/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/HSdemo/img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/HSdemo/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="/HSdemo/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="/HSdemo/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <link href="/HSdemo/css/styles.css" rel="stylesheet">
+  <!-- TABULATOR -->
+  <link href="/HSdemo/css/vendor/tabulator/tabulator_bootstrap4.min.css" rel="stylesheet">
+  <script type="text/javascript" src="/HSdemo/js/vendor/tabulator/tabulator.min.js"></script>
+  <!-- TABULATOR DOWNLOAD BUTTONS -->
+  <script type="text/javascript" src="https://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+  <!-- CHARTJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  <!-- OWN SCRIPTS -->
+  <script src="/HSdemo/js/healthData/healthDropdown.js"></script>
+  <script src="/HSdemo/js/healthData/healthTable.js"></script>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/HSdemo/home">Heart Survey DEMO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/consentForms">Consent Forms</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Survey Responses</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyTable">KCCQ-12 - Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyCharts">KCCQ-12 - Charts</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyTable">Katz - Table</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyCharts">Katz - Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KCCQ-12 Scores</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="/HSdemo/kccqScoresTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqScoresCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item active" href="/HSdemo/healthTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/healthCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/backups">Backups</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div class="jumbotron" id="jumbotronCentered">
+      <h1>Health Data: Table</h1>
+      <br>
+      <br>
+      <p>Select a Patient ID from the dropdown and press "Generate Table" to view the select patient's health data as a table.</p>
+      <ul id="surveyBullets">
+        <li>Dates are in the format "<span style="color: red;"><b>MM-dd-yyyy</b></span>".</li>
+        <li>Columns are resizeable.</li>
+        <br>
+        <li>Download buttons will appear after table generation.</li>
+        <li><b>NB: </b>Downloading as a PDF may cause the table to be truncated.</li>
+        <br>
+        <li>A row of 0's most likely denotes that authorisation for that particular health data type was not granted, but could also signify no data for that measurement yet.</li>
+        <li>A singular 0 entry likely denotes no data <b>for that day</b> (e.g. the patient did not wear their fitness tracker).</li>
+      </ul>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <select class="form-control" id="healthMeasurements-dropdown"></select>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-primary mb-2" id="generate-table">Generate Table</button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+
+      <br>
+
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Data key
+        </button>
+      </p>
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <p id="question">The health data recorded, in order.</p>
+              <br>
+              <br>
+              <p id="question"><b>Active Energy: </b>measured in kcal.</p>
+              <p id="question">This is an estimate of energy burned over and above your Resting Energy use (see Resting Energy). Active Energy includes activity such as walking slowly, pushing your wheelchair and household chores, as well as
+                exercise such as cycling and dancing. Your total energy use is the sum of your Resting Energy and Active Energy.</p>
+              <br>
+              <p id="question"><b>Flights Climbed:</b></p>
+              <p id="question">A flight of stairs is counted as approximately 3 metres (10 feet) of elevation gain (approximately 16 steps).</p>
+              <br>
+              <p id="question"><b>Average Heart Rate</b></p>
+              <br>
+              <p id="question"><b>Resting Energy: </b>measured in kcal.</p>
+              <p id="question">This is an estimate of the energy your body uses each day while minimally active. Additional physical activity requires more energy over and above Resting Energy (see Active Energy).</p>
+              <br>
+              <p id="question"><b>Steps:</b></p>
+              <p id="question">Step count is the number of steps you take throughout the day. Pedometers and digital activity trackers can help you determine your step count. These devices count steps for any activity that involves step-like
+                movement, including walking, running, stair-climbing, cross-country skiing, and even movement as you go about your daily chores.</p>
+              <br>
+              <p id="question"><b>Walking + Running Distance: </b>meters.</p>
+              <p id="question"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+    </div>
+
+    <div id="tableDiv">
+      <div id="example-table" class="table-bordered table-striped thead-dark"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-csv" style="display: none;">Download CSV</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-json" style="display: none;">Download JSON</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-xlsx" style="display: none;">Download XLSX</button>
+      </div>
+      <div class="col-sm-3" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="download-pdf" style="display: none;">Download PDF</button>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

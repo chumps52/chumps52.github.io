@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heart Survey DEMO - KCCQ-12 Charts</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/HSdemo/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/HSdemo/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/HSdemo/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/HSdemo/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/HSdemo/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/HSdemo/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/HSdemo/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/HSdemo/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HSdemo/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/HSdemo/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HSdemo/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/HSdemo/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HSdemo/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/HSdemo/img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/HSdemo/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="/HSdemo/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="/HSdemo/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <link href="/HSdemo/css/styles.css" rel="stylesheet">
+  <!-- TABULATOR -->
+  <link href="/HSdemo/css/vendor/tabulator/tabulator_bootstrap4.min.css" rel="stylesheet">
+  <script type="text/javascript" src="/HSdemo/js/vendor/tabulator/tabulator.min.js"></script>
+  <!-- TABULATOR DOWNLOAD BUTTONS -->
+  <script type="text/javascript" src="https://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+  <!-- CHARTJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  <!-- OWN SCRIPTS -->
+  <script src="/HSdemo/js/surveyResponses/surveyDropdown.js"></script>
+  <script src="/HSdemo/js/surveyResponses/kccqSurveyCharts.js"></script>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/HSdemo/home">Heart Survey DEMO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/consentForms">Consent Forms</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Survey Responses</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyTable">KCCQ-12 - Table</a>
+            <a class="dropdown-item active" href="/HSdemo/kccqSurveyCharts">KCCQ-12 - Charts</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyTable">Katz - Table</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyCharts">Katz - Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KCCQ-12 Scores</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="/HSdemo/kccqScoresTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqScoresCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="/HSdemo/healthTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/healthCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/backups">Backups</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div class="jumbotron" id="jumbotronCentered">
+      <h1>KCCQ-12 Responses: Charts</h1>
+      <br>
+      <br>
+      <p>Select a Patient ID from the dropdown and press "Generate Charts" to view the select patient's KCCQ-12 responses in chart format, per question.</p>
+      <ul id="surveyBullets">
+        <li>Charts may be saved by right-clicking -> "Save image as..."</li>
+      </ul>
+
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <select class="form-control" id="surveyResponses-dropdown"></select>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-primary mb-2" id="generate-charts">Generate Charts</button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+
+      <br>
+
+      <p>
+        <button class="btn btn-danger mb-2" id="reset-charts" style="display: none;">Reset Charts</button>
+      </p>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4" style="text-align: center;">
+        <button class="btn btn-primary mb-2" id="generate-charts" style="display: none;">Generate Charts</button>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+
+    <br>
+
+    <div id="chart-div" style="display: none;">
+      <div class="chart-container" id="chartContainerKCCQ1a">
+        <canvas id="chartCanvasKCCQ1a" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ1b">
+        <canvas id="chartCanvasKCCQ1b" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ1c">
+        <canvas id="chartCanvasKCCQ1c" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ2">
+        <canvas id="chartCanvasKCCQ2" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ3">
+        <canvas id="chartCanvasKCCQ3" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ4">
+        <canvas id="chartCanvasKCCQ4" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ5">
+        <canvas id="chartCanvasKCCQ5" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ6">
+        <canvas id="chartCanvasKCCQ6" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ7">
+        <canvas id="chartCanvasKCCQ7" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ8a">
+        <canvas id="chartCanvasKCCQ8a" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ8b">
+        <canvas id="chartCanvasKCCQ8b" width="60vw" height="40vw"></canvas>
+      </div>
+      <hr>
+      <div class="chart-container" id="chartContainerKCCQ8c">
+        <canvas id="chartCanvasKCCQ8c" width="60vw" height="40vw"></canvas>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

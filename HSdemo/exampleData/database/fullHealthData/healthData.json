@@ -1,0 +1,114 @@
+{
+  "02-23-2019": {
+    "activeEnergy": 517,
+    "flightsClimbed": 8,
+    "heartRate": 76,
+    "restingEnergy": 2064,
+    "steps": 4231,
+    "walkingRunningDistance": 3350
+  },
+  "02-24-2019": {
+    "activeEnergy": 576,
+    "flightsClimbed": 20,
+    "heartRate": 76,
+    "restingEnergy": 2094,
+    "steps": 6954,
+    "walkingRunningDistance": 5376
+  },
+  "02-25-2019": {
+    "activeEnergy": 366,
+    "flightsClimbed": 11,
+    "heartRate": 73,
+    "restingEnergy": 2027,
+    "steps": 2352,
+    "walkingRunningDistance": 1833
+  },
+  "02-26-2019": {
+    "activeEnergy": 408,
+    "flightsClimbed": 9,
+    "heartRate": 75,
+    "restingEnergy": 2010,
+    "steps": 3494,
+    "walkingRunningDistance": 2766
+  },
+  "02-27-2019": {
+    "activeEnergy": 840,
+    "flightsClimbed": 17,
+    "heartRate": 93,
+    "restingEnergy": 2112,
+    "steps": 11886,
+    "walkingRunningDistance": 9300
+  },
+  "02-28-2019": {
+    "activeEnergy": 435,
+    "flightsClimbed": 11,
+    "heartRate": 72,
+    "restingEnergy": 2031,
+    "steps": 2744,
+    "walkingRunningDistance": 2150
+  },
+  "03-01-2019": {
+    "activeEnergy": 433,
+    "flightsClimbed": 15,
+    "heartRate": 86,
+    "restingEnergy": 1984,
+    "steps": 6008,
+    "walkingRunningDistance": 4288
+  },
+  "03-02-2019": {
+    "activeEnergy": 734,
+    "flightsClimbed": 33,
+    "heartRate": 75,
+    "restingEnergy": 2096,
+    "steps": 7939,
+    "walkingRunningDistance": 6181
+  },
+  "03-03-2019": {
+    "activeEnergy": 918,
+    "flightsClimbed": 51,
+    "heartRate": 83,
+    "restingEnergy": 2069,
+    "steps": 11180,
+    "walkingRunningDistance": 8721
+  },
+  "03-04-2019": {
+    "activeEnergy": 571,
+    "flightsClimbed": 11,
+    "heartRate": 72,
+    "restingEnergy": 2100,
+    "steps": 7093,
+    "walkingRunningDistance": 5328
+  },
+  "03-05-2019": {
+    "activeEnergy": 227,
+    "flightsClimbed": 7,
+    "heartRate": 66,
+    "restingEnergy": 1519,
+    "steps": 1655,
+    "walkingRunningDistance": 1291
+  },
+  "03-06-2019": {
+    "activeEnergy": 580,
+    "flightsClimbed": 10,
+    "heartRate": 76,
+    "restingEnergy": 2115,
+    "steps": 6164,
+    "walkingRunningDistance": 5009
+  },
+  "03-07-2019": {
+    "activeEnergy": 522,
+    "flightsClimbed": 23,
+    "heartRate": 75,
+    "restingEnergy": 2072,
+    "steps": 3824,
+    "walkingRunningDistance": 3055
+  },
+  "03-08-2019": {
+    "activeEnergy": 527,
+    "flightsClimbed": 10,
+    "heartRate": 75,
+    "restingEnergy": 2072,
+    "steps": 5774,
+    "walkingRunningDistance": 4743
+  }
+}

@@ -1,0 +1,50 @@
+/* ALL */
+body {
+  /*min-height: 75rem;*/
+  padding-top: 4.5rem;
+}
+
+#jumbotronCentered {
+  text-align: center;
+}
+
+hr {
+  border-width: 5px 0;
+}
+
+/* Survey Responses */
+#tableDiv {
+  margin: 2em;
+}
+
+#question {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+#subQuestion {
+  text-align: justify;
+  text-indent: 50px;
+  margin-bottom: 0;
+}
+
+#surveyBullets {
+  display: table;
+  margin: 0 auto;
+  text-align: left;
+  width: 40vw;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 40vw;
+  width: 60vw;
+  margin-bottom: 100px;
+}
+
+#chartContainer8c {
+  margin-bottom: 0px;
+}
+
+/* Consent Forms */

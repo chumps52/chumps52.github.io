@@ -1,0 +1,15 @@
+healthDate,patientID,activeEnergy,flightsClimbed,heartRate,restingEnergy,steps,walkingRunningDistance
+02-19-2019,someHealthData,0,10,0,0,7615,5025
+02-20-2019,someHealthData,0,4,0,0,4179,3042
+02-21-2019,someHealthData,0,3,0,0,4422,3125
+02-22-2019,someHealthData,0,7,0,0,7970,5982
+02-23-2019,someHealthData,0,0,0,0,4976,3109
+02-24-2019,someHealthData,0,0,0,0,288,196
+02-25-2019,someHealthData,0,0,0,0,4818,3503
+02-26-2019,someHealthData,0,2,0,0,7822,5082
+02-27-2019,someHealthData,0,3,0,0,6028,4193
+02-28-2019,someHealthData,0,1,0,0,5015,3300
+03-01-2019,someHealthData,0,16,0,0,12089,8926
+03-02-2019,someHealthData,0,0,0,0,2788,1879
+03-03-2019,someHealthData,0,0,0,0,227,142
+03-04-2019,someHealthData,0,1,0,0,2974,2231

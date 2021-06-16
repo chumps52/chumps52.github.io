@@ -1,0 +1,11 @@
+{
+  "noHealthData": {
+    "Added": "idAdded"
+  },
+  "someHealthData": {
+    "Added": "idAdded"
+  },
+  "fullHealthData": {
+    "Added": "idAdded"
+  }
+}

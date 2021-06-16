@@ -1,0 +1,11 @@
+{
+  "noHealthData": {
+    "Added": "csvAdded"
+  },
+  "someHealthData": {
+    "Added": "csvAdded"
+  },
+  "fullHealthData": {
+    "Added": "csvAdded"
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heart Survey DEMO - Backups</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/HSdemo/img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/HSdemo/img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/HSdemo/img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/HSdemo/img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/HSdemo/img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/HSdemo/img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/HSdemo/img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/HSdemo/img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HSdemo/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/HSdemo/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HSdemo/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/HSdemo/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HSdemo/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/HSdemo/img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/HSdemo/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="/HSdemo/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="/HSdemo/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <link href="/HSdemo/css/styles.css" rel="stylesheet">
+  <!-- OWN SCRIPTS -->
+  <script src="/HSdemo/js/backups/dropdown.js"></script>
+  <script src="/HSdemo/js/backups/download.js"></script>
+</head>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/HSdemo/home">Heart Survey DEMO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HSdemo/consentForms">Consent Forms<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Survey Responses</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyTable">KCCQ-12 - Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqSurveyCharts">KCCQ-12 - Charts</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyTable">Katz - Table</a>
+            <a class="dropdown-item" href="/HSdemo/katzSurveyCharts">Katz - Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KCCQ-12 Scores</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="/HSdemo/kccqScoresTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/kccqScoresCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Health Data</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="/HSdemo/healthTable">Table</a>
+            <a class="dropdown-item" href="/HSdemo/healthCharts">Charts</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/HSdemo/backups">Backups</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <div class="jumbotron" id="jumbotronCentered">
+      <h1>Download CSV backups</h1>
+      <br>
+      <br>
+      <p>Select a PatientID from the dropdown and press "Download Backup" to download the selected patient's data in CSV format.</p>
+      <p>Backups may also be extracted in-app: <span style="color: red;"><b>About -> Admin Tools -> Export Data</b></span></p>
+      <p><b>NB: </b>You may need to allow the download of multiple files at once in your browser, as 4 separate files will be downloaded at once.</p>
+      <br>
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <select class="form-control" id="backups-dropdown"></select>
+        </div>
+        <div class="col-sm-3">
+          <button class="btn btn-primary mb-2" id="downloadButton">Download Backup</button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+
+
+</html>
